@@ -6,15 +6,19 @@
   --dark-blue: #34495e;
   --midnight-blue: #2c3e50;
   --ligt-white: #ecf0f1;
+  --silver: #bdc3c7;
 
   --bg-color: var(--ligt-white);
-  --text-color: var(--blue);
+  --text-color: var(--midnight-blue);
+  --body-color: white;
+  --link-color: var(--blue);
+  --link-color-hover: var(--dark-blue);
 }
 
 :root[data-theme="dark"] {
   --body-color: var(--midnight-blue);
   --bg-color: var(--dark-blue);
-  --text-color: var(--green);
+  --text-color: var(--ligt-white);
 }
 
 /* RESET */
@@ -24,4 +28,58 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+.clear-fix {
+  clear: both;
+}
+
 /* Nav */
+
+header {
+  background-color: var(--bg-color);
+  min-height: 20px;
+  padding: 20px 0;
+}
+
+header > nav {
+  width: 800px;
+  margin: 0 auto;
+}
+header > nav > ul {
+  float: left;
+  list-style: none;
+}
+
+header > nav > ul:last-of-type {
+  float: right;
+}
+
+header > nav > ul > li {
+  float: left;
+  margin-right: 10px;
+}
+
+header > nav > ul > li > a {
+  text-decoration: none;
+  color: var(--link-color);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+header > nav > ul > li > a:hover {
+  color: var(--link-color-hover);
+  background-color: var(--bg-color);
+}
+
+header > nav > ul > li:last-child > a {
+  background-color: var(--blue);
+  color: var(--bg-color);
+}
+
+header > nav > ul > li:last-child > a:hover {
+  background-color: var(--dark-blue);
+  color: var(--bg-color);
+}
